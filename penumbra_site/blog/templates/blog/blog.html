@@ -1,0 +1,68 @@
+{% extends parent_template|default:"blog/base_blog.html" %}
+{% block styles %}
+{% endblock %}
+{% block title %}
+{{ block.super }} - Blog
+{% endblock %}
+{% block demoscene %}
+	<iframe id="iframe2" scrolling="no" src="{% url 'demoscene:demoscene' %}" width="50px" height="50px" frameborder="0"></iframe>
+{% endblock %}
+{% block blogheaders %}
+{% load static %}
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static "blog/common/bootstrap.css" %}">
+		<script src="{% static "blog/common/modernizr-2.js" %}" type="text/javascript"></script>
+		<script src="{% static "blog/common/jquery-3.2.1.min.js" %}" type="text/javascript"></script>
+		<!--iOS expanding iframe fix-->
+		<script>
+			var iframe = $('#iframe2');
+			function resizeIframe() {
+				var viewer = document.getElementById( 'iframe2' );
+				var iframe = $('#iframe2');
+				if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) {
+					viewer.setAttribute( 'scrolling', 'no' );
+					$('#iframe2').attr('height', '150px');
+					$('#iframe2').attr('width', viewer.parentElement.clientWidth);
+				}else{
+					var height = document.documentElement.clientHeight;
+					var width = document.documentElement.clientWidth;
+					height = (height < 0) ? 0 : height;
+					$('#iframe2').attr('height', ((height + 'px')/2));
+					width = (width < 0) ? 0 : width;
+					$('#iframe2').attr('width', (width + 'px'));
+				}
+			}
+			// .onload doesn't work with IE8 and older.
+			if (iframe.attachEvent) {
+				iframe.attachEvent("onload", resizeIframe);
+			} else {
+				iframe.onload=resizeIframe;
+			}
+			window.onload = resizeIframe;
+			window.onresize = resizeIframe;
+		</script>
+{% endblock %}
+{% block content %}
+<div id="globalWrapper">
+	<div id="spacer"><br></br><br></br><br></br></div>
+	<section class="light">
+		<div class="container">
+			<div class="row">
+				<section class="links">
+					{% for post in posts %}
+					<div class="col-sm-3 col-xs-6">
+							<p class="article_header">{{ post.pub_date }}</p>
+							<p class="article_text">{% autoescape off %}{{ post.text|linebreaksbr }}{% endautoescape %}</p>
+						<p></p>
+					</div>
+					{% endfor %}
+				</section>
+			</div>
+		</div>
+	</section>
+</div>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends parent_template|default:"headerFrame/base_headerFrame.html" %}
+{% load static %}
+{% block frameheaders %}
+		<link href="{% static "headerFrame/css/style.css" %}" rel="stylesheet" media="all">
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="{% static "blog/common/jquery-3.2.1.min.js" %}"></script>
+		<script type="text/javascript">
+			var theme_list_open = false;
+			$(document).ready(function () {
+				function fixHeight () {
+					var headerHeight = $("#switcher").height();
+					var url = $("#iframe2").attr('src');
+					$("#iframe").attr("height", (($(window).height()) - headerHeight) + 'px');
+					$("#iframe2").attr("height", (($(window).height()) - headerHeight) + 'px');
+					$('#iframe2').attr('src', url);
+				}
+				$(window).resize(function () {
+					fixHeight();
+				}).resize();
+				$("#theme_select").click( function () {
+					if (theme_list_open == true) {
+						$(".center nav li nav").hide();
+						theme_list_open = false;
+					} else {
+						$(".center nav li nav").show();
+						theme_list_open = true;
+					}
+					return false;
+				});
+				$("#theme_list nav li a").click(function () {
+					var theme_data = $(this).attr("rel").split(",");
+					$("li.purchase a").attr("href", theme_data[1]);
+					$("li.remove_frame a").attr("href", theme_data[0]);
+					$("#iframe").attr("src", theme_data[0]);
+					$("#theme_list a#theme_select").text($(this).text());
+					$(".center ul li ul").hide();
+					$(".demo").hide();
+					theme_list_open = false;
+					return false;
+				});
+				$("#menu_link a").click(function () {
+					var theme_data = $(this).attr("rel").split(",");
+					$("li.purchase a").attr("href", theme_data[1]);
+					$("li.remove_frame a").attr("href", theme_data[0]);
+					$("#iframe").attr("src", theme_data[0]);
+					$("#theme_list a#theme_select").text($(this).text());
+					$(".center ul li ul").hide();
+					$(".demo").hide();
+					theme_list_open = false;
+					return false;
+				});
+			});
+			$(window).on('load', function() {
+				$('#customThemeList li').hover(function() {
+					$(this).find('.demo').stop(true, true).fadeIn();
+					var $right = -parseInt($(this).find('.demo img').width() + 8);
+					$(this).find('.demo').css('right', $right);
+				}, function() {
+					$(this).find('.demo').stop(true, true).fadeOut();
+				});
+			});
+		</script>
+{% endblock %}
+{% block blogheaders %}
+{% endblock %}
+{% block demoscene %}
+{% endblock %}
+{% block headerFrame %}
+{% load static %}
+	<div id="switcher">
+		<div class="center">
+		<!--HERE IS THE FLOATING MENU CONTENT-->
+		<nav id="main_frame">
+			<li id="theme_list"><a id="theme_select" href="#"><b><span class="linkText" ><i>Site_Menu</i></span></b></a>
+				<nav id="customThemeList">
+					<li style="clear:both">
+						<a id="link1" href="/blog/" rel="blog">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Blog<img id="BlMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>	
+						<div class="demo">
+						<img src="" alt="">
+						</div>
+					</li>
+					<li style="clear:both">
+						<a id="link5" href="/pictures/" rel="pictures">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pictures<img id="PicMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>
+						<div class="demo">
+						<img src="#" alt="">
+						</div>
+					</li>
+					<li style="clear:both">
+						<a id="link3" href="/movies/" rel="movies">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Videos<img id="MovMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>
+						<div class="demo">
+		x				<img src="#" alt="">
+						</div>
+					</li>
+					<li style="clear:both">
+						<a id="link2" href="/links/" rel="links">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Docs/Links<img id="DocMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>					
+						<div class="demo">
+						<img src="#" alt="">
+						</div>
+					</li>
+					<li style="clear:both">
+						<a id="link1" href="/contactme/" rel="contactme">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact<img id="ConMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>	
+						<div class="demo">
+						<img src="#" alt="">
+						</div>
+					</li>
+					<li style="clear:both">
+						<a id="link1" href="/radius/" rel="radius">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Radius<img id="ConMenuImage" src="{% static "headerFrame/img/html5.svg" %}" alt="#" class="type"></a>	
+						<div class="demo">
+						<img src="#" alt="">
+						</div>
+					</li>
+				</nav>
+			</li>
+		</nav>
+		</div>
+	</div>
+{% endblock %}
+{% block content %}
+{% endblock %}
+{% block jquery %}
+			<!--<iframe id="iframe" scrolling="yes" src="{% url 'radius:radius' %}"></iframe>-->
+			<iframe id="iframe" scrolling="yes" src="{% url 'blog:blog' %}"></iframe>
+{% endblock %}
+{% block footer %}
+{% endblock %}
+

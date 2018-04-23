@@ -1,0 +1,20 @@
+{% extends parent_template|default:"reactTest/base_reactTest.html" %}
+{% block styles %}
+{% endblock %}
+{% block title %}
+{{ block.super }} - React Test
+{% endblock %}
+{% block demoscene %}
+<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
+{% endblock %}
+{% block blogheaders %}
+{% load static %}
+<script type="text/javascript">
+var sWorker="{% static "reactTest/js/service-worker.js" %}";
+var logoA = "{% static "reactTest/media/logo.5d5d9eef.svg" %}";
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name="theme-color" content="#000000"><link rel="manifest" href="{% static "reactTest/json/manifest.json" %}"><link rel="shortcut icon" href="{% static "reactTest/img/favicon.ico" %}"><link href="{% static "reactTest/css/main.c17080f1.css" %}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div><script type="text/javascript" src="{% static "reactTest/js/main.ed18f09b.js" %}"></script>
+{% endblock %}

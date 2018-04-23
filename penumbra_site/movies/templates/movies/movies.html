@@ -1,0 +1,94 @@
+{% extends parent_template|default:"movies/base_movies.html" %}
+{% block title %}
+{{ block.super }} - Movies
+{% endblock %}
+{% block demoscene %}
+<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
+{% endblock %}
+{% block blogheaders %}
+{% load static %}
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link href="{% static "blog/common/css.css" %}" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="{% static "blog/common/normalize.css" %}">
+		<link rel="stylesheet" href="{% static "blog/common/bootstrap.css" %}">
+		<link rel="stylesheet" href="{% static "blog/common/main.css" %}">
+		<script src="{% static "blog/common/modernizr-2.js" %}"></script>
+		<script src="{% static "blog/common/jquery-3.2.1.min.js" %}" type="text/javascript"></script>
+		<link href="{% static "movies/css/style.css" %}" rel="stylesheet" type="text/css">
+		<!--iOS expanding iframe fix-->
+		<script>
+			var iframe = $('#iframe2');
+			function resizeIframe() {
+				var viewer = document.getElementById( 'iframe2' );
+				var iframe = $('#iframe2');
+				if ( /(iPad|iPhone|iPod)/g.test( navigator.userAgent ) ) {
+					viewer.setAttribute( 'scrolling', 'no' );
+					$('#iframe2').attr('height', '150px');
+					$('#iframe2').attr('width', viewer.parentElement.clientWidth);
+				}else{
+					var height = document.documentElement.clientHeight;
+					var width = document.documentElement.clientWidth;
+					height = (height < 0) ? 0 : height;
+					$('#iframe2').attr('height', ((height + 'px')/2));
+					width = (width < 0) ? 0 : width;
+					$('#iframe2').attr('width', (width + 'px'));
+				}
+			}
+			// .onload doesn't work with IE8 and older.
+			if (iframe.attachEvent) {
+				iframe.attachEvent("onload", resizeIframe);
+			} else {
+				iframe.onload=resizeIframe;
+			}
+			window.onload = resizeIframe;
+			window.onresize = resizeIframe;
+		</script>
+{% endblock %}
+{% block pictureheaders %}
+{% endblock %}
+{% block videoheaders %}
+{% load static %}
+		<script type="text/javascript">
+			var opcl1 = 0, opcl2 = 0, opcl3 = 0;
+			$(function(){
+				$('#InstButton').click(function(){
+					if(opcl1 == 0){
+						$("#Inst").slideDown();
+						opcl1 = 1;
+					}else{
+						$("#Inst").slideUp();
+						opcl1 = 0;
+					}
+				});
+			});
+		</script>
+{% endblock %}
+
+{% block content %}
+{% load static %}
+	<div id="globalWrapper">
+		<section class="light">
+			<div class="container">
+				<div class="row">
+					<section class="links">
+						<button id='InstButton' class="col-sm-3 col-xs-5"><h3>Videos Coming Soon!</h3></button>
+						<details open id="Inst" style='display:none;' class="col-sm-10 col-xs-10">
+							<!--{% for movie in movies %}
+							<div class="col-sm-3 col-xs-6">
+								<span><p><b>{{ movie.title }}</b></p></span>
+								<video width="320" height="240" controls>
+									<source src="{% static movie.link %}" type="{{ movie.type }}">
+									Your browser does not support the video tag.
+								</video>
+							</div>
+							{% endfor %}-->
+						</details>
+					</section>
+				</div>
+			</div>  
+		</section>
+	</div>
+{% endblock %}

@@ -1,0 +1,74 @@
+
+ <!DOCTYPE HTML>
+ <html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		{% load static %}
+		{% load staticfiles %}
+		{% block mediafilterheaders %}
+		{% endblock %}
+		{% block demoheaders %}
+		{% endblock %}
+		{% block styles %}
+		{% endblock %}
+		<title>
+			{% block title %}
+				Statics Page
+			{% endblock %}
+		</title>
+		{% block frameheaders %}
+		{% endblock %}
+		{% block blogheaders %}
+		{% endblock %}
+		{% block videoheaders %}
+		{% endblock %}
+		{% block pictureheaders %}
+		{% endblock %}
+	<!--HTML5 SHIV to teach IE how to work-->
+	<!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<![endif]-->
+	</head>
+	<body>
+		{% block headerFrame %}
+		{% endblock %}
+		{% block demoscene %}
+		{% endblock %}
+		{% block radengine %}
+		{% endblock %}
+		{% block content %}		
+		{% endblock %}	
+		<!--END CONTENT-->
+		{% block libraries %}
+		{% endblock %}
+		{% load static %}
+		{% block footer %}
+		<footer id="main_footer">		
+				<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/bootstrap.svg" %}" style="height: 80%; width: 80%;" alt=""/>
+				</div>
+				<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/djaango.svg" %}" style="height: 100%; width: 100%;" alt=""/>
+				</div>	
+				<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/threejs.svg" %}" style="height: 80%; width: 80%;" alt=""/>
+				</div>	
+				<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/myysql.svg" %}" style="height: 80%; width: 80%;" alt=""/>
+				</div>	
+				<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/pyython.svg" %}" style="height: 100%; width: 100%;" alt=""/>
+				</div>
+				<!--<div class="col-sm-2 col-xs-2">
+					<img src="{% static "headerFrame/img/threejs.png" %}" alt=""/>
+				</div>--><br></br>					
+				<div class="col-sm-4 col-xs-4">
+					<span><p><b class="page_footer" style="font-size: 12px;">2017 Penumbra.systems</b></p></span>
+				</div>
+		</footer>
+		{% endblock %}
+		{% block jquery %}
+		{% endblock %}
+	</body>
+</html>
