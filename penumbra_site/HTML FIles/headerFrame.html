@@ -1,5 +1,7 @@
 {% extends parent_template|default:"headerFrame/base_headerFrame.html" %}
 {% block frameheaders %}
+		{% load static %}
+		{% load staticfiles %}
 		<link href="{% static "headerFrame/css/style.css" %}" rel="stylesheet" media="all">
 		<script type="text/javascript">
 			var theme_list_open = false;

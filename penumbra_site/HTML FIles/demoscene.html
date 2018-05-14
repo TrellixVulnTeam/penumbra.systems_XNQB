@@ -25,6 +25,8 @@
 {% block demoscene %}
 {% endblock %}
 {% block content %}
+		{% load static %}
+		{% load staticfiles %}
 		<div id="container"></div>
 		<script src="{% static "demoscene/js/Detector.js" %}"></script>
 		<script src="{% static "demoscene/js/stats.min.js" %}"></script>

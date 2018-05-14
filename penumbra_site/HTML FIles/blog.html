@@ -9,6 +9,8 @@
 	<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
 {% endblock %}
 {% block blogheaders %}
+		{% load static %}
+		{% load staticfiles %}
 		<link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
 		<!--iOS expanding iframe fix-->
 		<script>
