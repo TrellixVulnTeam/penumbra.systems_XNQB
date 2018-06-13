@@ -91,20 +91,20 @@
 			<div class="container">
 				<div class="row">
 					<section class="links">
-					<div id="dgBox" style="color: red;">
+					<div id="dgBox">
 					Penumbra.Systems BROWSER DIAGNOSTIC PAGE
 					<br></br> You are running: {{agent}}<br></br>From: {{ip}}<br></br>
-					<iframe id="speedtest" style="margin-top: 0px; margin-bottom: 0px;overflow-x: hidden; overflow-y: auto;" src="http://www.speedtest.org" width="50%" height="100%" frameborder="0"></iframe>
+					<iframe id="speedtest" src="http://www.speedtest.org" width="50%" height="100%" frameborder="0"></iframe>
 					</div>
 					 <div id="canvasContainer">
-						<canvas id="canvasMandelbrot" width="1600" height="458" style="z-index: -1;"> </canvas>
-						<canvas id="canvasControls" width="1600" height="458" style="z-index: -1;"> </canvas>
+						<canvas id="canvasMandelbrot" width="1600" height="458"> </canvas>
+						<canvas id="canvasControls" width="1600" height="458"> </canvas>
 					</div>
 					<script src="{% static "blog/common/modernizr-2.js" %}"></script>
 					<script type="text/javascript" src="{% static "movies/js/mandelbrot.js" %}"></script>
 					
 						<!--<button id='InstButton' class="col-sm-3 col-xs-5"><h3>Videos Coming Soon!</h3></button>
-						<details open id="Inst" style='display:none;' class="col-sm-10 col-xs-10">
+						<details open id="Inst" class="col-sm-10 col-xs-10">
 							{% for movie in movies %}
 							<div class="col-sm-3 col-xs-6">
 								<span><p><b>{{ movie.title }}</b></p></span>

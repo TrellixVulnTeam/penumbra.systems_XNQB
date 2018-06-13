@@ -1,47 +1,52 @@
 /*05/28/2018 UNIFIED STYLESHEET*/
 /* tables still need 'cellspacing="0"' in the markup */
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-	/*width:100%;*/
-}
-body {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li, nav,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, video  {
+	overflow: visible;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: 300;
 	line-height: 1;
+	vertical-align: baseline;
+	background: transparent;
+	text-align: center;
+	width: 100%;
+}
+#iframe2{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	overflow-x: hidden;
+	overflow-y: auto;
 }
 #spacer{
 	background-color: #222222;
 	
 }
-ol, ul, nav {
-	list-style: none;
+#iframe {
+    margin: 0px;
+	width: 100%; 
+	height: 100%;
 }
-/* remember to define focus styles! */
+/* remember to define focus styles for tabbing with a keyboard */
 :focus {
 	outline: 0;
 }
-/* remember to highlight inserts somehow! */
-ins {
-	text-decoration: none;
+/*#globalWrapper{
+		overflow-y: scroll;
+}*/
+#logo{
+	background:url(logo.png) no-repeat;
+	width:118px; 
+	height:43px;
+	display:block;
 }
-del {
-	text-decoration: line-through;
-}
-a {
-
-    text-decoration: none;
-    color: #fff;
-
-}
-body {
-
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 300;
-}
-#globalWrapper{
-		overflow-y: auto;
-}
-#logo{background:url(logo.png) no-repeat;width:118px; height:43px;display:block;}
-
+/*parent tag for the menu*/
 #switcher {
 	height: 60px;
 	background: #4b4b4e;
@@ -50,18 +55,6 @@ body {
 	width: 17%;
 	padding:0;
   /*border-bottom: 1px solid #ccc;*/
-}
-#page_footer{
-	font-size: 30px;
-	color: red;
-}
-#iframe {
-
-    margin: 0px;
-	width: 100%; 
-	height: 100%;
-
-
 }
 /*CSS.css imports*/
 /* latin-ext */
@@ -85,19 +78,13 @@ body {
 	color: red;
 	font-family: "Times New Roman", Times, serif;
 }
-#main_footer{
-	height: 300px;
-	position: relative;
-	width: 100%;
-	background-color: black;
-	font-size: 15px;
-}
 .link_header{
 	color: white;
 	font-size: 15px;
 }
 .outside_link{
-	color: white;
+	color: #e6e600;
+	/*color: white;*/
 	font-size: 15px;
 }
 .light{
@@ -111,9 +98,6 @@ p.article_text{
 	color: white;
 	font-size: 12px;
 }
-.page_footer{
-	color: red;
-}
 p.mainset{
 	color: white;
 	
@@ -124,7 +108,7 @@ p.offset{
 	
 }
 /*Radius CSS*/
-.yui3-hd{
+/*.yui3-hd{
 	position:absolute;
 	top:0px;
 	left:1000px; 
@@ -132,7 +116,6 @@ p.offset{
 	z-index: 20;
 }
 #FrontScreen {
-	/*position:absolute;*/
 	visibility: visible;
 	z-index: 10;
 	top:0px;
@@ -144,31 +127,32 @@ p.offset{
 #RearScreen {
 	position:absolute;
 	visibility: visible;
-	/*z-index: 10;*/
 	top:0px;
 	left:0px; 
 	margin: 0px;
 	width: 100%; 
 	height: 100%;
+}*/
+/*---------------------------MOVIES--------------------------*/
+#dgBox{
+	color: red;
+}
+#speedtest{
+	margin-top: 0px;
+	margin-bottom: 0px;
+	overflow-x: hidden; 
+	overflow-y: auto;	
+}
+#canvasMandelbrot{
+	z-index: -1;
+}
+#canvasControls{
+	z-index: -1;
+}
+#Inst{
+	display:none;
 }
 /*---------------------------LINKS---------------------------*/
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li, nav,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td, video {
-	margin: 0px;
-	padding: 0px;
-	border: 0px;
-	outline: 0px;
-	/*font-size: 50%;*/
-	vertical-align: baseline;
-	background: transparent;
-}
 header{
 	background-image('mashupmerged.svg');
 }
@@ -191,17 +175,10 @@ a {
     text-decoration: none;
     color: #fff;
 }
-body {
-	overflow: hidden;
-	font-family: Arial, Helvetica, sans-serif;
-	font-weight: 300;
-	color: #333;
-}
 #link1{
-	 font-family: "Times New Roman", Georgia, Serif;
+	 font-family: "Arial, Helvetica, sans-serif";/*"Times New Roman", Georgia, Serif;*/
 	 color: white;
-	 font-size: 16px;
-	
+	 font-size: 16px;	
 }
 #link2{
 	 font-family: "Times New Roman", Georgia, Serif;
@@ -333,24 +310,21 @@ li.remove_frame a span {
 @media (max-width: @screen-sm) {
     body{font-size: 14px;}
 }
+@media only screen and (max-width: 250px){
+li#theme_list{display:none!important;}
+li.remove_frame {float:right!important; font-size: 18px;}
+.center ul li.purchase {display:none;}
+.center nav li.purchase {display:none;}
+}
 @media only screen and (max-width: 600px){
 li#theme_list{display:none!important;}
 li.remove_frame {float:right!important; font-size: 18px;}
 .center ul li.purchase {display:none;}
 .center nav li.purchase {display:none;}
-/*#logo{background:url(logo-icon.png) no-repeat; width:41px;}*/
 }
 /*--------------------------------------------------------------HEADERFRAME------------------------------------*/
-body {
-  text-align: center;
-}
-#ascii {
-  font-family: monospace;
-  font-size: 11px;
-  line-height: 70%;
-}
-#sprite {
-  display: none;
+#ER{
+	display: none;
 }
 #customThemeList{
 	display: none;
@@ -373,22 +347,6 @@ a {
 	width: 0%;
 	padding:0;
   /*border-bottom: 1px solid #ccc;*/
-}
-#theme_select {
-    /*background: url(dropdown.png) no-repeat;*/
-	margin-left: 0px;
-    margin-top: 35px;
-    width: 20px;
-    display: block;
-    padding: 10px 8px;
-    color: white;
-    border-radius: 4px;
-    padding: 10px;
-    font-size: 21px;
-    /*background:#efefef;*/
-	background: url(../img/menu_buttonSTm.svg)no-repeat right center;
-	/*background-color: clear;*/
-	background-size: 100% 50%;
 }
 .linkText{
 	margin-left: 40px;
@@ -460,20 +418,6 @@ a {
     position: relative;
 }
 /*5/28/2018 headerframe has a special version of this*/
-.center ul li ul li {
-    background: #301d1d;
-    position:relative;
-}
-.center ul li ul li a {
-    display: block;
-    padding: 12px 10px;
-    min-width: 173px;
-    font-size: 14px;
-    color: #c9c9c9;
-    font-weight: 400;
-	/*font-weight: bold;*/
-    float:left;
-}
 .center ul li ul li img.type{
     margin:6px 7px 0 0;
 }
@@ -503,14 +447,25 @@ margin-right: 5px;
 	color: white;
 	font-size: 12px;
 }
-@media only screen and (max-width: 250px){
-li#theme_list{display:none!important;}
-li.remove_frame {float:right!important; font-size: 18px;}
-.center ul li.purchase {display:none;}
-.center nav li.purchase {display:none;}
-/*#logo{background:url(logo-icon.png) no-repeat; width:41px;}*/
-}
 /*-----------------------------------------------------------DEMOSCENE-------------------------*/
+body {
+	color: #fff;
+	font-family:Monospace;
+	font-size:13px;
+	text-align:center;
+	background-color: #fff;
+	margin: 0px;
+	overflow: hidden;
+}
+#info {
+	position: absolute;
+	top: 0px; 
+	width: 100%;
+	padding: 5px;
+}
+a {
+	color: #2983ff;
+}
 canvas { 
 	width: 100%; 
 	height: 100%; 
@@ -526,5 +481,40 @@ canvas {
 	text-decoration: underline;
 	/*text-decoration-color: white;*/
 }
-
+#theme_select {
+    /*background: url(dropdown.png) no-repeat;*/
+	margin-left: 0px;
+    margin-top: 35px;
+    width: 20px;
+    display: block;
+    padding: 10px 8px;
+    color: white;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 21px;
+    /*background:#efefef;*/
+	background: url(../img/menu_buttonSTm.svg)no-repeat right center;
+	/*background-color: clear;*/
+	background-size: 100% 50%;
+}
+/*-------------------------------------------------------FOOTER-------------------------------*/
+#main_footer{
+	height: 300px;
+	position: relative;
+	width: 100%;
+	background-color: black;
+	font-size: 15px;
+}
+.col-sm-2 col-xs-2 .footerPicS{
+	height: 80%; 
+	width: 80%;
+}
+.col-sm-2 col-xs-2 .footerPicL{
+	height: 100%; 
+	width: 100%;
+}
+.page_footer{
+	font-size: 12px;
+	color: red;
+}
 

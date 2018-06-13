@@ -2,25 +2,9 @@
 {% block title %}
 {% endblock %}
 {% block demoheaders %}
-		<style>
-			body {
-				color: #fff;
-				font-family:Monospace;
-				font-size:13px;
-				text-align:center;
-				background-color: #fff;
-				margin: 0px;
-				overflow: hidden;
-			}
-			#info {
-				position: absolute;
-				top: 0px; width: 100%;
-				padding: 5px;
-			}
-			a {
-				color: #2983ff;
-			}
-		</style>
+{% load static %}
+{% load staticfiles %}
+		<link href="{% static "blog/css/style.css" %}" rel="stylesheet" type="text/css">
 {% endblock %}
 {% block demoscene %}
 {% endblock %}

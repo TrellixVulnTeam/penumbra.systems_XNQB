@@ -3,7 +3,7 @@
 {{ block.super }} - Pictures
 {% endblock %}
 {% block demoscene %}
-<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
+<iframe id="iframe2" scrolling="no" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
 {% endblock %}
 {% block blogheaders %}
 {% load static %}
@@ -64,7 +64,7 @@
 			<div class="row">
 				<section class="links">
 					<button id='ReaButton' class="col-sm-3 col-xs-5"><h3>Pictures Coming Soon!</h3></button>
-						<details open id="ER" style='display:none;' class="col-sm-10 col-xs-10">			
+						<details open id="ER" class="col-sm-10 col-xs-10">			
 							<!--{% for picture in pictures %}
 								<div class="col-sm-6 col-xs-6">
 									<span><p><b>{{ picture.title }}</b></p></span>

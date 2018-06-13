@@ -3,7 +3,7 @@
 {{ block.super }} - Links
 {% endblock %}
 {% block demoscene %}
-<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
+<iframe id="iframe2" scrolling="no" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
 {% endblock %}
 {% block blogheaders %}
 {% load static %}
@@ -46,7 +46,7 @@
 		<section class="light">
 			<div class="container">
 					<b class="link_header"><u>Documents</u></b>
-					<p class="outside_link" style="color: #e6e600;"><span>Resume:  </b><a href="{% static "links/docs/Resume.doc" %}" rel="">doc</a> <a href="{% static "links/docs/Resume.pdf" %}" rel="">pdf</a></span></p>
+					<p class="outside_link"><span>Resume:  </b><a href="{% static "links/docs/Resume.doc" %}" rel="">doc</a> <a href="{% static "links/docs/Resume.pdf" %}" rel="">pdf</a></span></p>
 					<p><br><b class="link_header"><u>Some Neat Web Links (Right click and select open in new window)</u></b></br></p>
 					<p class="outside_link"><a href="https://github.com/staticPenumbra" rel="">Radius Project (Github)</a>
 					<br></br><a href="http://vintagetek.org/" rel="">Vintage Tek Museum</a>

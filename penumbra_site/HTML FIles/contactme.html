@@ -1,7 +1,7 @@
 {% extends parent_template|default:"contactme/base_contactme.html" %}
 {% block title %}{{ block.super }} - Contact{% endblock %}
 {% block demoscene %}
-	<iframe id="iframe2" scrolling="no" style="margin-top: 0px; margin-bottom: 0px; overflow-x: hidden; overflow-y: auto;" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
+	<iframe id="iframe2" scrolling="no" src="{% url 'demoscene:demoscene' %}" width="100%" height="100%" frameborder="0"></iframe>
 {% endblock %}
 {% block blogheaders %}
 		{% load static %}
