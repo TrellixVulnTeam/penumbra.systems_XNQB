@@ -9,7 +9,7 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li, nav,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td, video  {
-	overflow: visible;
+	/*overflow: visible;*/
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: 300;
 	line-height: 1;
@@ -21,8 +21,8 @@ table, caption, tbody, tfoot, thead, tr, th, td, video  {
 #iframe2{
 	margin-top: 0px;
 	margin-bottom: 0px;
-	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-x: scroll;
+	overflow-y: scroll;
 }
 #spacer{
 	background-color: #222222;
@@ -37,9 +37,9 @@ table, caption, tbody, tfoot, thead, tr, th, td, video  {
 :focus {
 	outline: 0;
 }
-/*#globalWrapper{
-		overflow-y: scroll;
-}*/
+#globalWrapper{
+		/*overflow-y: scroll;*/
+}
 #logo{
 	background:url(logo.png) no-repeat;
 	width:118px; 
@@ -88,6 +88,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, video  {
 	font-size: 15px;
 }
 .light{
+	overflow: visible;
 	background-color: #222222;
 }
 p.article_header{
@@ -140,8 +141,8 @@ p.offset{
 #speedtest{
 	margin-top: 0px;
 	margin-bottom: 0px;
-	overflow-x: hidden; 
-	overflow-y: auto;	
+	overflow-x: scroll; 
+	overflow-y: scroll;	
 }
 #canvasMandelbrot{
 	z-index: -1;
@@ -175,36 +176,6 @@ a {
     text-decoration: none;
     color: #fff;
 }
-#link1{
-	 font-family: "Arial, Helvetica, sans-serif";/*"Times New Roman", Georgia, Serif;*/
-	 color: white;
-	 font-size: 16px;	
-}
-#link2{
-	 font-family: "Times New Roman", Georgia, Serif;
-	 color: white;
-	font-size: 16px;
-}
-#link3{
-	 font-family: "Times New Roman", Georgia, Serif;
-	 color: white;
-	font-size: 16px;
-}
-#link4{
-	 font-family: "Times New Roman", Georgia, Serif;
-	 color: white;
-	font-size: 16px;
-}
-#link5{
-	 font-family: "Times New Roman", Georgia, Serif;
-	 color: white;
-	font-size: 16px;
-}
-#link6{
-	 font-family: "Times New Roman", Georgia, Serif;
-	 color: white;
-	font-size: 16px;
-}
 .btnBuy {
 	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 	display: inline-block;
@@ -236,11 +207,11 @@ a {
     width: 220px;
     top:35px;
 }
-.center nav li nav li {
+/*.center nav li nav li {
     background: #333;
     position:relative;
-}
-.center nav li nav li a {
+}*/
+/*.center nav li nav li a {
     display: block;
     padding: 12px 10px;
     min-width: 173px;
@@ -248,7 +219,7 @@ a {
     color: #c9c9c9;
     font-weight: 400;
     float:left;
-}
+}*/
 .center nav li nav li a:hover{
     color:white;
 }
@@ -311,27 +282,60 @@ li.remove_frame a span {
     body{font-size: 14px;}
 }
 @media only screen and (max-width: 250px){
-li#theme_list{display:none!important;}
-li.remove_frame {float:right!important; font-size: 18px;}
+/*li#theme_list{display:none!important;}
+li.remove_frame {float:right!important; font-size: 18px;}*/
 .center ul li.purchase {display:none;}
 .center nav li.purchase {display:none;}
+.linkItem{margin-right: 15%;
+	font-family: "Arial, Helvetica, sans-serif";/*"Times New Roman", Georgia, Serif;*/
+	color: white;
+	font-size: 16px;
+	font-weight: 400;
+    float:left;
+	text-shadow: 0 0 3px #908af4;
+	padding: 8px 10px;
+	border-radius: 15px 50px;
+	background: #444;}
 }
 @media only screen and (max-width: 600px){
-li#theme_list{display:none!important;}
-li.remove_frame {float:right!important; font-size: 18px;}
+/*li#theme_list{display:none!important;}
+li.remove_frame {float:right!important; font-size: 18px;}*/
 .center ul li.purchase {display:none;}
 .center nav li.purchase {display:none;}
+.linkItem{margin-right: 15%;
+	font-family: "Arial, Helvetica, sans-serif";/*"Times New Roman", Georgia, Serif;*/
+	color: white;
+	font-size: 16px;
+	font-weight: 400;
+    float:left;
+	text-shadow: 0 0 3px #908af4;
+	padding: 8px 10px;
+	border-radius: 15px 50px;
+	background: #444;}
 }
 /*--------------------------------------------------------------HEADERFRAME------------------------------------*/
+.linkItem{
+	margin-right: 15%;
+	font-family: "Arial, Helvetica, sans-serif";/*"Times New Roman", Georgia, Serif;*/
+	color: white;
+	font-size: 14px;
+	font-weight: 400;
+    float:left;
+	text-shadow: 0 0 3px #908af4;
+	padding: 8px 10px;
+	border-radius: 15px 50px;
+	background: #333;
+	line-height: 1px;
+}
 #ER{
 	display: none;
 }
 #customThemeList{
-	display: none;
+	display: table;
 	position-top: 70px;
 }
 #container {
-  overflow: hidden;
+  overflow: visible;
   display: inline-block;
 }/*custom ends here*/
 a {
@@ -398,7 +402,7 @@ a {
 	opacity: .9;
 }
 /*5/28/2018 headerframe has a special version of this*/
-.center nav li nav li a {
+/*.center nav li nav li a {
     display: block;
     padding: 8px 10px;
     min-width: 163px;
@@ -407,7 +411,7 @@ a {
     font-weight: 400;
     float:left;
 	text-shadow: 0 0 3px #908af4;
-}
+}*/
 /*5/28/2018 headerframe has a special version of this*/
 .center nav li nav li a:hover{
     color:black;
@@ -455,7 +459,7 @@ body {
 	text-align:center;
 	background-color: #fff;
 	margin: 0px;
-	overflow: hidden;
+	overflow: scroll;
 }
 #info {
 	position: absolute;
@@ -505,13 +509,15 @@ canvas {
 	background-color: black;
 	font-size: 15px;
 }
-.col-sm-2 col-xs-2 .footerPicS{
-	height: 80%; 
-	width: 80%;
+/*.col-sm-2 col-xs-2 .footerPicS{*/
+.footerPicS{
+	height: 10%; 
+	width: 10%;
 }
-.col-sm-2 col-xs-2 .footerPicL{
-	height: 100%; 
-	width: 100%;
+/*.col-sm-2 col-xs-2 .footerPicL{*/
+.footerPicL{
+	height: 20%; 
+	width: 20%;
 }
 .page_footer{
 	font-size: 12px;
