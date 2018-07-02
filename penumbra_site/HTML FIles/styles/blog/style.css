@@ -39,6 +39,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, video  {
 }
 #globalWrapper{
 		/*overflow-y: scroll;*/
+		padding-bottom: 5px;
 }
 #logo{
 	background:url(logo.png) no-repeat;
@@ -77,6 +78,7 @@ table, caption, tbody, tfoot, thead, tr, th, td, video  {
 	font-size: 18px;
 	color: red;
 	font-family: "Times New Roman", Times, serif;
+	margin-top: 20px;
 }
 .link_header{
 	color: white;
@@ -508,6 +510,7 @@ canvas {
 	width: 100%;
 	background-color: black;
 	font-size: 15px;
+	padding-top: 15px;
 }
 /*.col-sm-2 col-xs-2 .footerPicS{*/
 .footerPicS{

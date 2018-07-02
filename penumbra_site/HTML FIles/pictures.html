@@ -63,14 +63,14 @@
 		<div class="container">
 			<div class="row">
 				<section class="links">
-					<button id='ReaButton' class="col-sm-3 col-xs-5"><h3>Pictures Coming Soon!</h3></button>
+					<button id='ReaButton' class="col-sm-3 col-xs-5"><h3>Research Picture Gallery</h3></button>
 						<details open id="ER" class="col-sm-10 col-xs-10">			
-							<!--{% for picture in pictures %}
+							{% for picture in pictures %}
 								<div class="col-sm-6 col-xs-6">
 									<span><p><b>{{ picture.title }}</b></p></span>
 									<img src="{% static picture.link %}" alt=""/>
 								</div>
-							{% endfor %}-->
+							{% endfor %}
 						</details>		   
 				</section>
 			</div>

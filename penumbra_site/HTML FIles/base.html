@@ -43,8 +43,13 @@
 		{% endblock %}
 		{% load static %}
 		{% block footer %}
-		<footer id="main_footer">		
-				<div class="footerPicL">
+		<footer id="main_footer">
+					<span><p><b class="page_footer">This site on <a href="https://github.com/staticPenumbra/penumbra.systems">GitHub</a></b></p></span>
+					<span><p><b class="page_footer">Privacy Policy: I don't collect your data</b></p></span>
+					<span><p><b class="page_footer">Terms Of Use: None (The internet is still free here)</b></p></span>
+					<span><p><b class="page_footer">Contact: the82professional@hotmail.com (Since 2001)</b></p></span>
+					<span><p><b class="page_footer">2018 Penumbra.systems</b></p></span>
+				<!--<div class="footerPicL">
 					<img src="{% static "headerFrame/img/bootstrap.svg" %}" alt=""/>
 				</div>
 				<div class="footerPicS">
@@ -62,9 +67,6 @@
 				<!--<div class="col-sm-2 col-xs-2">
 					<img src="{% static "headerFrame/img/threejs.png" %}" alt=""/>
 				</div>--><br></br>					
-				<div class="col-sm-4 col-xs-4">
-					<span><p><b class="page_footer">2017 Penumbra.systems</b></p></span>
-				</div>
 		</footer>
 		{% endblock %}
 		{% block jquery %}
